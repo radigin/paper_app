@@ -3,12 +3,10 @@ module VirtualLabHelper
     tag.svg(width: width + 80, height: width + 50) do
       center_x = width / 2 + 25
       center_y = width / 2 + 25
-      tag(:circle, cx: center_x, cy: center_y, r: width * 0.95/ 2, 
+      tag(:circle, cx: center_x, cy: center_y, r: width * 0.95 / 2, 
         fill: 'rgb(255, 255, 170)') + 
       tag(:circle, cx: center_x, cy: center_y, r: width * 0.5 / 2, 
         fill: 'none', 'stroke-width' => 1, stroke: 'rgb(133, 102, 81)') + 
-      tag(:circle, cx: center_x, cy: center_y, r: width * 0.65 / 2, 
-        fill: 'none', 'stroke-width' => 2, stroke: 'rgb(255, 0, 0)') + 
       tag(:circle, cx: center_x, cy: center_y, r: width * 0.80 / 2, 
         fill: 'none', 'stroke-width' => 1, stroke: 'rgb(133, 102, 81)') + 
       tag(:circle, cx: center_x, cy: center_y, r: width * 0.95 / 2, 
@@ -37,6 +35,18 @@ module VirtualLabHelper
         end + 
         tag(:line, x1: x1, y1: y1, x2: x2, y2: y2, 
           'stroke-width' => 1, stroke: 'rgb(133, 102, 81)')
+      end.join()) +
+      tag(:circle, id: :redline, cx: center_x, cy: center_y, r: width * 0.65 / 2, 
+        fill: 'none', 'stroke-width' => 2, stroke: 'rgb(255, 0, 0)') +
+      raw((0..4).map do |i|
+        m = -20 + i * 10
+        r = width * (0.35 + 0.15 * i) / 2
+        phi = 3* Math::PI / 2
+        x = r * Math.cos(phi) + center_x + 2
+        y = r * Math.sin(phi) + center_y - 2 
+        tag.text(x: x, y: y, fill: 'black', style: 'font-size: 10px') do
+          (m < 0 ? '' : (m == 0 ? raw('&nbsp;&nbsp;') : raw('&nbsp;'))) + m.to_s + ' мкм'
+        end
       end.join())
     end
   end
