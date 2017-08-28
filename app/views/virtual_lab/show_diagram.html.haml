@@ -1,1 +1,3 @@
-= raw(draw_field_for_round_diagram())
+= tag.svg(width: 680, height: 650) do
+  = raw(draw_field_for_round_diagram())
+  = draw_sector_of_round_diagram(@points, 0, 2000)
