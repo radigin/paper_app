@@ -1,0 +1,60 @@
+!!!
+%html
+  %head
+    %title
+      PaperApp
+    = csrf_meta_tags
+
+    = stylesheet_link_tag 'application', media: 'all', 
+    'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  %body
+    %nav.navbar.navbar-default.navbar-static-top#nav-field
+      .container-fluid
+        .navbar-header
+          = link_to('#', class: 'navbar-brand') do
+            Центр удалённого пользования 
+          %button{type: :button, class: 'navbar-toggle collapsed', 
+          'data-toggle' => 'collapse', 'data-target' => '#bs-example-navbar-collapse-1',
+          'aria-expanded' => false}
+            %span.sr-only
+              Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+        .collapse.navbar-collapse#bs-example-navbar-collapse-1
+          %ul.nav.navbar-nav.navbar-right
+            %li.active
+              = link_to('#') do
+                Тест 1
+            %li.dropdown
+              = link_to('#', class: 'dropdown-toggle', 
+              'data-toggle' => 'dropdown', role: :button, 
+              'aria-haspopup' => true, 'aria-expanded' => false) do
+                Тест 2
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  = link_to('#') do
+                    Тест 3
+                %li
+                  = link_to('#') do
+                    Тест 4
+    %ul.nav.nav-pills.flex-column
+      %li.nav_item
+        = link_to('#') do
+          Тест 5
+      %li.nav_item
+        = link_to('#') do
+          Тест 6
+    #breadcrumbs
+      %ol.breadcrumb
+        %li
+          = link_to('#') do
+            Тест 5
+        %li
+          = link_to('#') do
+            Тест 6
+    #main-field
+      = yield
