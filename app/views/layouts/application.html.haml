@@ -10,7 +10,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    %nav.navbar.navbar-expand-lg.navbar-dark.bg-success#nav-field
+    %nav.navbar.navbar-expand-lg.navbar-dark.bg-primary#nav-field
       = link_to('#', class: 'navbar-brand') do
         %span.border.p-1
           Центр удалённого пользования 
@@ -37,16 +37,16 @@
               = link_to('#', class: 'dropdown-item') do
                 Кругломер Talyrond 200
               = link_to('#', class: 'dropdown-item') do
-                Кругломер Talyrond 800
+                Кругломер Talyrond 73
           %li.nav-item.dropdown
             = link_to('#', class: 'nav-link dropdown-toggle', 
             'data-toggle' => 'dropdown') do
               Трансляции
             .dropdown-menu
               = link_to('#', class: 'dropdown-item') do
-                Исследование боковых поверхностей (Talyrond 200)
+                Исследование боковых поверхностей (Talyrond 73)
               = link_to('#', class: 'dropdown-item') do
-                Исследование торцевых поверхностей (Talyrond 200)
+                Исследование торцевых поверхностей (Talyrond 73)
         %ul.navbar-nav
           %li.nav-item.dropdown
             = link_to('#', class: 'nav-link dropdown-toggle', 
@@ -57,20 +57,22 @@
                 Личный кабинет
               = link_to('#', class: 'dropdown-item') do
                 Выйти
-    %ul.nav.nav-pills.flex-column
-      %li.nav_item
-        = link_to('#') do
-          Тест 5
-      %li.nav_item
-        = link_to('#') do
-          Тест 6
-    #breadcrumbs
-      %ol.breadcrumb
-        %li
+    .col-sm-3.col-md-2.d-none.d-sm-block.bg-light.sidebar#sidebar
+      %ul.nav.nav-pills.flex-column
+        %li.nav_item
           = link_to('#') do
             Тест 5
-        %li
+        %li.nav_item
           = link_to('#') do
             Тест 6
     #main-field
-      = yield
+      #breadcrumbs
+        %ol.breadcrumb
+          %li
+            = link_to('#') do
+              Тест 5
+          %li
+            = link_to('#') do
+              Тест 6
+      #data        
+        = yield
