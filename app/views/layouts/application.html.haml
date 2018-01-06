@@ -57,22 +57,38 @@
                 Личный кабинет
               = link_to('#', class: 'dropdown-item') do
                 Выйти
-    .col-sm-3.col-md-2.d-none.d-sm-block.bg-light.sidebar#sidebar
-      %ul.nav.nav-pills.flex-column
-        %li.nav_item
-          = link_to('#') do
-            Тест 5
-        %li.nav_item
-          = link_to('#') do
-            Тест 6
-    #main-field
-      #breadcrumbs
-        %ol.breadcrumb
-          %li
-            = link_to('#') do
-              Тест 5
-          %li
-            = link_to('#') do
-              Тест 6
-      #data        
-        = yield
+    .container-fluid            
+      .row
+        .col-sm-3.col-md-2.d-none.d-sm-block.bg-light.sidebar#sidebar
+          %ul.nav.nav-pills.flex-column
+            %li.nav_item
+              = link_to('#') do
+                = fa_icon :cog
+                Круглограммы
+            %li.nav_item
+              = link_to('#') do
+                = fa_icon 'bar-chart'
+                Профиллограммы
+            %li.nav_item
+              = link_to('#') do
+                = fa_icon :cubes
+                3D-анализ
+        .col-sm-3.col-md-2
+        .col-sm-9.col-md-10#main-field
+          #breadcrumbs
+            %ol.breadcrumb
+              %li
+                = link_to('#') do
+                  Трансляции
+              %li
+                = link_to('#') do
+                  Исследование боковых поверхностей (Talyrond 73)
+              %li
+                = link_to('#') do
+                  От 16.12.2017
+          .row
+            .col-md-8
+              #data        
+                = yield
+            .col-md-4
+              qq
