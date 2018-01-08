@@ -2,8 +2,9 @@
 @import font-awesome
 #main-field
   top: 3.5rem
-$orange-color: rgb(255, 220, 0)
-$orange-color-bg: rgb(255, 165, 0)
+$orange-color: lighten(rgb(255, 165, 0), 25%) //rgb(255, 220, 0)
+$orange-color-bg: #f4821f // rgb(255, 165, 0)
+$my-blue: #3d85c0
 .navbar
   position: fixed
   width: 100%
@@ -23,14 +24,28 @@ $orange-color-bg: rgb(255, 165, 0)
   overflow-x: hidden
   overflow-y: auto
   border-right: 1px solid #eee
-  background-color: lighten($orange-color-bg, 30%) !important
+  background-color: lighten($orange-color-bg, 35%) !important
   .nav_item
     padding-bottom: 10px
 ol.breadcrumb
   padding: 1px 5px 1px
   margin-top: 5px
   li
+    margin-right: 5px
     display: inline-block
   li:not(:last-child) 
     &:after
       content: "/"
+.orange-bg
+  background-color: $orange-color-bg
+.blue-bg
+  background-color: $my-blue
+.card
+  h6
+    font-weight: bold
+.tiny-cards
+  .card
+    margin-bottom: 2px
+    font-size: 80%
+  .card-title
+    font-weight: bold

@@ -1,3 +1,122 @@
-= tag.svg(width: 680, height: 650) do
-  = raw(draw_field_for_round_diagram())
-  = draw_sector_of_round_diagram(@points, 0, 2000)
+.row
+  .col-md-7.text-center
+    .card.bg-light
+      .card-body
+        %h6.card-title
+          Измерение № 2: 
+          %span.step1.step2.step3.step4
+            в процессе
+          %span.step5
+            завершено
+        .card-text
+          .data.step1       
+            = tag.svg(width: 680, height: 650) do
+              = raw(draw_field_for_round_diagram())
+              = draw_sector_of_round_diagram(@points, 2000, 2000)
+          .data.d-none.step2        
+            = tag.svg(width: 680, height: 650) do
+              = raw(draw_field_for_round_diagram())
+              = draw_sector_of_round_diagram(@points, 1622, 2000)
+          .data.d-none.step3        
+            = tag.svg(width: 680, height: 650) do
+              = raw(draw_field_for_round_diagram())
+              = draw_sector_of_round_diagram(@points, 1045, 2000)
+          .data.d-none.step4        
+            = tag.svg(width: 680, height: 650) do
+              = raw(draw_field_for_round_diagram())
+              = draw_sector_of_round_diagram(@points, 341, 2000)
+          .data.d-none.step5        
+            = tag.svg(width: 680, height: 650) do
+              = raw(draw_field_for_round_diagram())
+              = draw_sector_of_round_diagram(@points, 0, 2000)
+  .col-md-5.text-center
+    .card.bg-light
+      .card-body
+        %h6.card-title
+          Базовые параметры
+        .card-text
+          .row
+            .col-sm-8
+              Высота измерения
+            .col-sm-4
+              18 мм
+          .row
+            .col-sm-8
+              Базовый радиус
+            .col-sm-4
+              22 мм
+          .row.step1
+            .col-sm-8
+              Узлы не загружены
+            .col-sm-4             
+          .row.d-none.step2
+            .col-sm-8
+              Загружено узлов
+            .col-sm-4
+              378
+          .row.d-none.step3
+            .col-sm-8
+              Загружено узлов
+            .col-sm-4
+              955
+          .row.d-none.step4
+            .col-sm-8
+              Загружено узлов
+            .col-sm-4
+              1659
+          .row.d-none.step5.d-none
+            .col-sm-8
+              Загружено узлов
+            .col-sm-4
+              2000
+    .card.bg-light.mt-2
+      .card-body
+        %h6.card-title
+          Сообщения оператора
+        .card-text.tiny-cards
+          .row           
+            .col-sm-10.text-left
+              .card.bg-white.step0.step1.step2.step3.step4.step5
+                .card-body
+                  .card-title
+                    16.12.2017 13:42:34 
+                  .card-text
+                    Измеряем боковую поверхность поршня на основе 10 сечений.
+            .col-sm-2
+          .row
+            .col-sm-2
+            .col-sm-10.text-right
+              .card.bg-white.step1.step2.step3.step4.step5
+                .card-body
+                  .card-title
+                    16.12.2017 13:43:14 
+                  .card-text
+                    Калибровка. 
+          .row
+            .col-sm-10.text-left
+              .card.bg-white.step1.step2.step3.step4.step5
+                .card-body
+                  .card-title
+                    16.12.2017 13:44:09 
+                  .card-text
+                    Измеряем сечение 1. Высота 22 мм.
+            .col-sm-2
+          .row
+            .col-sm-2
+            .col-sm-10.text-right
+              .card.bg-white.step1.step2.step3.step4.step5
+                .card-body
+                  .card-title
+                    16.12.2017 13:48:22 
+                  .card-text
+                    Измеряем сечение 2. Высота 18 мм.
+          .row
+            .col-sm-10.text-left
+              .card.bg-white.step6.d-none
+                .card-body
+                  .card-title
+                    16.12.2017 13:51:28 
+                  .card-text
+                    Измерение 2 закончено.
+            .col-sm-2
+

@@ -10,7 +10,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    %nav.navbar.navbar-expand-lg.navbar-dark.bg-primary#nav-field
+    %nav.navbar.navbar-expand-lg.navbar-dark.blue-bg#nav-field
       = link_to('#', class: 'navbar-brand') do
         %span.border.p-1
           Центр удалённого пользования 
@@ -76,7 +76,7 @@
         .col-sm-3.col-md-2
         .col-sm-9.col-md-10#main-field
           #breadcrumbs
-            %ol.breadcrumb
+            %ol.breadcrumb.bg-white
               %li
                 = link_to('#') do
                   Трансляции
@@ -86,9 +86,4 @@
               %li
                 = link_to('#') do
                   От 16.12.2017
-          .row
-            .col-md-8
-              #data        
-                = yield
-            .col-md-4
-              qq
+          = yield
